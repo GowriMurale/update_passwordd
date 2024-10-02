@@ -3,7 +3,6 @@ class UpdatePasswords extends StatefulWidget {
   @override
   State<UpdatePasswords> createState() => _UpdatePasswordState();
 }
-
 class _UpdatePasswordState extends State<UpdatePasswords> {
   bool _obscureText = true; // Initially set to true to obscure tex
   bool _obscure = true;

@@ -33,7 +33,7 @@ class ResponseScreen extends StatelessWidget {
         builder: (context, constraints) {
           if (constraints.maxWidth < 600) {
             // Mobile layout
-            return UpdatePasswordss();
+            return Mobile();
           } else if (constraints.maxWidth < 1024) {
             // Tablet layout
             return UpdatePasswords();
