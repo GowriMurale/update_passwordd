@@ -219,14 +219,15 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             suffixIcon: IconButton(
-                                icon: Icon(
-                                  _obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-                                ),
-                                onPressed: (){
-                                  setState(() {
-                                    _obscureText = !_obscureText; // Toggle the obscureText boolean
-                                  });
-                                }
+                              icon: Icon(
+                                // Choose icon based on the obscureText boolean
+                                _obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                              ),
+                              onPressed: (){
+                                setState(() {
+                                  _obscureText = !_obscureText; // Toggle the obscureText boolean
+                                });
+                              },
                             ),
                           ),
                         ),)
@@ -296,65 +297,6 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                     ],
                   ),
                 ),
-                /*SizedBox(
-                  width: 360,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('Confirm Password', style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontStyle: FontStyle.normal),),
-                      Container(
-                        height: 35,
-                        width: 330,
-                        padding: EdgeInsets.only(),
-                        child: TextField(
-                          obscureText: _obscure,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                  color: Colors.black12, width: 1.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade400),
-                              // Border when enabled
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade500),
-                              // Border when focused
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade500),
-                              // Border when there is an error
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            disabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade500),
-                              // Border when disabled
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-                              ),
-                              onPressed: () {
-                                _obscure = !_obscure;
-                              },
-                            ),
-                          ),
-                        ),)
-                    ],
-                  ),
-                ),*/
                 const SizedBox(height: 30),
                 Container(
                   child: Center(
@@ -366,7 +308,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                           padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 13),
                           shape: RoundedRectangleBorder(
                            borderRadius: BorderRadius.circular(0),
-                      ),
+                         ),
                          child: Text(
                          'Update',
                          style: TextStyle(
@@ -647,21 +589,24 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                  SizedBox(height: 20),
                 Container(
                   child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Update', style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),),
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 60, vertical: 13),
-                        backgroundColor: Colors.yellow,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(0),
+                      child: isloading
+                          ? CircularProgressIndicator(color: Colors.yellow,) // Show spinner when loading
+                          : MaterialButton(
+                           onPressed: _handleUpdateButton,
+                           color: Colors.yellow,
+                           padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 13),
+                           shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(0),
+                            ),
+                           child: Text(
+                          'Update',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
                   ),
                   //SizedBox(height: 30)
                 ),
