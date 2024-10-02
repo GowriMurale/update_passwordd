@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/mmkg/change_password/ios/Runner/GeneratedPluginRegistrant.m \
+  /Users/mmkg/change_password/ios/Runner/GeneratedPluginRegistrant.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Modules/module.modulemap \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/Flutter.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterAppDelegate.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterMacros.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPlugin.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterBinaryMessenger.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterChannels.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterCodecs.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPlatformViews.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterTexture.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterCallbackCache.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterDartProject.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterEngine.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterEngineGroup.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterViewController.h \
+  /Users/mmkg/change_password/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterHourFormat.h

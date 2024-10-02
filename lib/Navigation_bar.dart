@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-class Navigationbar extends StatefulWidget {
-  const Navigationbar({super.key});
-
+class Navigationbars extends StatefulWidget {
+  const Navigationbars({super.key});
   @override
-  State<Navigationbar> createState() => _NavigationbarState();
+  State<Navigationbars> createState() => _NavigationbarsState();
 }
+class _NavigationbarsState extends State<Navigationbars> {
 
-class _NavigationbarState extends State<Navigationbar> {
   DateTime now = DateTime.now(); // Get the current date and time
   String formattedDate = DateFormat(' dd/MM/yyyy    HH:mm:ss').format(DateTime.now()); //
   Widget build(BuildContext context) {
@@ -15,6 +14,18 @@ class _NavigationbarState extends State<Navigationbar> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        title: Text(''),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+          ),
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(1.0), // Height of the border
+          child: Container(
+            color: Colors.black12, // Border color
+            height: 1.0, // Height of the border
+          ),
+        ),
         actions: [
           Row(
               children: [
@@ -29,6 +40,26 @@ class _NavigationbarState extends State<Navigationbar> {
           Icon(Icons.mail_outline_outlined),
           SizedBox(width: 30), // spacing between icons
           Icon(Icons.notifications_outlined),
+
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(height: 20,),
+                Container(
+                  width: 15.0,  // Set the width
+                  height: 15.0, // Set the height
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,  // Circular shape
+                    color: Colors.yellow,      // Background color
+                  ),
+                  child: Center(
+                    child: Text(
+                      '1',
+                      style: TextStyle(fontSize:9,fontWeight:FontWeight.bold,color: Colors.black),
+                    ),
+                  ),
+                ),]),
           SizedBox(width: 70), // spacing between icons
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -50,24 +81,35 @@ class _NavigationbarState extends State<Navigationbar> {
             ],
           ),
           SizedBox(width: 30,),
-          Center(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+           children: [
+           Center(
             child: Container(
-              height: 50,
+              height: 75,
               child: CircleAvatar(
-                backgroundImage: AssetImage(''),
+                backgroundImage: AssetImage('images/image.png'),
                 radius: 30,
-                child: Container(
-                  height: 30,
-                  width: 100,
-                  padding: EdgeInsets.only(left: 25,bottom: 2,top: 10),
-                  child: IconButton(
-                    onPressed: () {
-                      _showPopupMenu(context);
-                    }, icon: Icon(Icons.edit_outlined,),
-                  ),
+                child:Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  //mainAxisSize: MainAxisSize.max,
+                  children: [
+                  Container(
+                    height:22,
+                    width: 500,
+                  padding: EdgeInsets.only(left: 29,top: 3,),
+                   child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey.shade300,
+                        shape: CircleBorder()
+                      ),
+                      onPressed: () {
+                        _showPopupMenu(context);
+                      }, child: Icon(Icons.edit_outlined,size: 9,color: Colors.black87,)
+                  ),)])
                 ),
-
-              ),),),
+              ),),]),
           SizedBox(width: 30), // spacing between the profile and app bar end
         ],
         toolbarHeight: 75.0,
@@ -75,7 +117,6 @@ class _NavigationbarState extends State<Navigationbar> {
     );
   }
 }
-
 void _showPopupMenu(BuildContext context) {
   showMenu(
     color: Colors.white,
@@ -87,84 +128,118 @@ void _showPopupMenu(BuildContext context) {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            //SizedBox(height: 20,),
-            Container(
-              height: 50,
-              child: CircleAvatar(
-                backgroundImage: AssetImage(''),
-                radius: 30,
-                child: Container(
-                  height: 30,
-                  width: 100,
-                  padding: EdgeInsets.only(left: 25,bottom: 2,top: 10),
-                  child: IconButton(
-                    onPressed: () {
-                    }, icon: Icon(Icons.edit_outlined,),
-                  ),
-                ),),),
-            //SizedBox(height: 1,),
-            Text('Personal Info Edit',
-              style: TextStyle(fontSize: 13,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                  fontStyle: FontStyle.normal),),
-            SizedBox(height: 7,),
-            Divider(
-              thickness: 4.0,
-              color: Colors.black54,
-            ),
-            SizedBox(height: 3,),
-            Row(
-                children: [
-                  Container(
-                    height: 28,
-                    width: 125,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                          borderSide: const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                      ),
-                    ),),
-                  SizedBox(width: 5,),
-                  Container(
-                    height: 28,
-                    width: 125,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                          borderSide: const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                      ),
-                    ),),
-                ]),
             SizedBox(height: 10,),
             Container(
-              height: 28,
-              width: 330,
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: const BorderSide(color: Colors.grey, width: 1.0),
+              height: 70,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/image.png'),
+                radius: 30,
+                child: Container(
+                  width: 100, // Width of the button
+                  height: 30, // Height of the button
+                  padding: EdgeInsets.symmetric(vertical: 10,horizontal: 13) ,
+                  child: IconButton(
+                      color: Colors.black,
+                      iconSize: 15,
+                      padding: EdgeInsets.all(20),
+                      onPressed: () {
+                        _showPopupMenu(context);
+                      }, icon: Icon(Icons.photo_camera_outlined,)
+                  ),
+                ),
                   ),
                 ),
 
-              ),),
+            SizedBox(height: 5,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: 20,
+                  padding: EdgeInsets.only(left: 12),
+                  child:Text('Personal Info',
+                  style: TextStyle(fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                  fontStyle: FontStyle.normal),)
+                ),
+                SizedBox(width: 90,),
+               RichText(
+                text: TextSpan(
+                 children: [
+                TextSpan(
+                  text: 'Edit',
+                  style: TextStyle(fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.blue,
+                    fontStyle: FontStyle.normal,
+                    decoration: TextDecoration.underline,
+                  ),
+                  // Use GestureRecognizer to detect taps
+                ),
+              ]),)]),
+            SizedBox(height: 7,),
+            Divider(
+              thickness: 1.5,
+              color: Colors.black45,
+            ),
+            SizedBox(height: 3,),
+            Container(
+              height: 32,
+              width: 280,
+              decoration: BoxDecoration(
+                color: Colors.white, // Background color of the container
+                border: Border.all(
+                  color: Colors.grey, // Border color
+                  width: 1, // Border width
+                ),
+                borderRadius: BorderRadius.circular(7), // Optional: rounded corners
+              ),
+
+              child: Row(
+                  children: [
+                    SizedBox(width: 20,),
+                    Text('Mdm',
+                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.black87),),]),
+            ),
             SizedBox(height: 10,),
             Container(
-              height: 28,
-              width: 330,
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: const BorderSide(color: Colors.grey, width: 1.0),
-                  ),
+              height: 32,
+              width: 280,
+              decoration: BoxDecoration(
+                color: Colors.white, // Background color of the container
+                border: Border.all(
+                  color: Colors.grey, // Border color
+                  width: 1, // Border width
                 ),
-              ),),
+                borderRadius: BorderRadius.circular(7), // Optional: rounded corners
+              ),
+              child: Row(children: [
+                SizedBox(width: 20,),
+                Text(
+                  '8056863355',
+                  style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.black87),),
+              ]),),
+            SizedBox(height: 10,),
+            Container(
+              width: 280,
+              height: 32,
+              decoration: BoxDecoration(
+                color: Colors.white, // Background color of the container
+                border: Border.all(
+                  color: Colors.grey, // Border color
+                  width: 1, // Border width
+                ),
+                borderRadius: BorderRadius.circular(7), // Optional: rounded corners
+              ),
+              child:Row(children: [
+                SizedBox(width: 20,),
+                Text(
+                  'Adinin@gmail.com',
+                  style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.black87),
+                ),
+              ]),),
+
             SizedBox(height: 10),
             Row(
                 children: [
@@ -179,7 +254,7 @@ void _showPopupMenu(BuildContext context) {
                         ),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10), // Rounded corners
+                            borderRadius: BorderRadius.circular(7), // Rounded corners
                           ),
                         ),
                       ),
@@ -187,38 +262,30 @@ void _showPopupMenu(BuildContext context) {
                           fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black)),
                     ),
                   ),
-
                   SizedBox(width: 10,),
                   Container(
                     height: 30,
                     width: 110,
-                    child: Material(
-                      elevation: 5.0, // Add shadow/elevation
-                      borderRadius: BorderRadius.circular(7), // Rounded corners
-                      color: Colors.transparent, // To prevent color overrides
-                      child: MaterialButton(
-                        onPressed: () {
-                          // Action on press
-                        },
-                        color: Colors.yellow,
-                        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 13),
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.yellow,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7),
-                        ),
-                        child: Text(
-                          'Logout',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
+
+                          borderRadius: BorderRadius.circular(7), // Rounded corners
                         ),
                       ),
-                    ),
-                  ),
-
-                  SizedBox(height: 50)
-                ]),
+                      child: Row(
+                        children: [
+                         SizedBox(width: 20,) ,
+                         Text('Logout',style: TextStyle(
+                          fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black)),
+                          SizedBox(width: 5,) ,
+                          Icon(Icons.logout_outlined),
+                     ]),
+                  ),),
+                   SizedBox(height: 50)
+                  ]),
           ],
         ),
       ),

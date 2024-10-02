@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'update_password.dart';
+import 'Navigation_bar.dart';
+import 'change_password.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home:  UpdatePasswordScreen(),
+      home:  UpdatePassword(),
     );
   }
 }
