@@ -41,7 +41,7 @@ class _ChangePasswordState extends State<ChangePassword> {
       appBar: AppBar(backgroundColor: Colors.white,),
       body: LayoutBuilder(
        builder: (context, constraints) {
-        if (constraints.maxWidth >= 1200) {
+        if (constraints.maxWidth >= 600) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -323,16 +323,16 @@ class _ChangePasswordState extends State<ChangePassword> {
                               ? CircularProgressIndicator(
                             color: Colors.yellow,) // Show spinner when loading
                               : MaterialButton(
-                            onPressed: _handleUpdateButton,
-                            color: Colors.yellow,
-                            padding: const EdgeInsets.symmetric(
+                                onPressed: _handleUpdateButton,
+                                color: Colors.yellow,
+                                padding: const EdgeInsets.symmetric(
                                 horizontal: 60, vertical: 13),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0),
-                            ),
-                            child: Text(
-                              'Update',
-                              style: TextStyle(
+                                shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(0),
+                               ),
+                               child: Text(
+                               'Update',
+                                style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -354,7 +354,7 @@ class _ChangePasswordState extends State<ChangePassword> {
 
             ],
           );
-        } else if (constraints.maxWidth >= 800 && constraints.maxWidth < 1200) {
+        } else if (constraints.maxWidth >= 600 && constraints.maxWidth < 1000) {
           return
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -575,10 +575,10 @@ class _ChangePasswordState extends State<ChangePassword> {
                                   color: Colors.black,
                                   fontStyle: FontStyle.normal),),
                               Container(
-                                height: 35,
-                                width: 330,
-                                padding: const EdgeInsets.only(),
-                                child: TextField(
+                                 height: 35,
+                                 width: 330,
+                                 padding: const EdgeInsets.only(),
+                                 child: TextField(
                                   obscureText: _obscure,
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(
@@ -610,7 +610,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                                       // Border when disabled
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                    suffixIcon: IconButton(
+                                     suffixIcon: IconButton(
                                       icon: Icon(
                                         // Choose icon based on the obscureText boolean
                                         _obscure
@@ -634,18 +634,18 @@ class _ChangePasswordState extends State<ChangePassword> {
                           child: Center(
                             child: isloading
                                 ? CircularProgressIndicator(
-                              color: Colors.yellow,) // Show spinner when loading
-                                : MaterialButton(
-                              onPressed: _handleUpdateButton,
-                              color: Colors.yellow,
-                              padding: const EdgeInsets.symmetric(
+                                  color: Colors.yellow,) // Show spinner when loading
+                                 : MaterialButton(
+                                  onPressed: _handleUpdateButton,
+                                  color: Colors.yellow,
+                                  padding: const EdgeInsets.symmetric(
                                   horizontal: 60, vertical: 13),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(0),
-                              ),
-                              child: Text(
-                                'Update',
-                                style: TextStyle(
+                                  shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(0),
+                                  ),
+                                  child: Text(
+                                  'Update',
+                                  style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
@@ -664,15 +664,17 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                   ),
                 ),
-
               ],
             );
         } else {
           return Column(
               children: [
                 Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    verticalDirection: VerticalDirection.down,
+                    spacing: 0.0,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(1.0),

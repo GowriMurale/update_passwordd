@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: ChangePassword(desktop:Scaffold(), tablet: Scaffold(), mobile: Scaffold(), paddingWidth: 1, bgColor: Colors.transparent)
+      home:  NavigatorAppBar(),
     );
   }
 }
