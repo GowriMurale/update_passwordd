@@ -9,11 +9,6 @@ class NavigatorAppBar extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(''),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-          ),
-        ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0), // Height of the border
           child: Container(

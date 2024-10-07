@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Navigation_bar.dart';
+import 'mobile.dart';
 import 'change_password.dart';
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home:  NavigatorAppBar(),
+      home:  mobileScreen(),
     );
   }
 }
